@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101820">
+  <title>Cyber Lab | Security Toolkit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">C</div>
+      <div>
+        <h2>CYBER LAB</h2>
+        <small>SECURITY TOOLKIT</small>
+      </div>
+    </div>
+
+    <p class="nav-label">WORKSPACE</p>
+    <button class="nav-item active" data-section="overview">⌂ <span>Overview</span></button>
+    <button class="nav-item" data-section="password">▣ <span>Password Lab</span></button>
+    <button class="nav-item" data-section="url">◎ <span>URL Checker</span></button>
+    <button class="nav-item" data-section="encoder">⌘ <span>Text Encoder</span></button>
+    <button class="nav-item" data-section="hash"># <span>Hash Generator</span></button>
+    <button class="nav-item" data-section="quiz">✓ <span>Security Quiz</span></button>
+    <button class="nav-item" data-section="terminal">>_ <span>Practice Terminal</span></button>
+
+    <div class="sidebar-footer">
+      <span class="status-dot"></span>
+      Local tools ready
+      <small>Cyber Lab · Version 1.0</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SECURITY WORKSPACE</p>
+        <h1 id="page-title">Overview</h1>
+      </div>
+      <div class="top-status"><span class="status-dot"></span> SYSTEM ONLINE</div>
+    </header>
+
+    <section id="overview" class="page active">
+      <div class="welcome">
+        <div>
+          <p class="eyebrow">WELCOME TO YOUR WORKSPACE</p>
+          <h2>Understand security.<br>Build safer habits.</h2>
+          <p class="muted">A practical collection of tools for learning and testing.</p>
+          <button class="primary-btn" data-open="password">Explore tools <span>→</span></button>
+        </div>
+        <div class="welcome-mark">CL<span>01</span></div>
+      </div>
+
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR TOOLKIT</p><h2>Available tools</h2></div>
+        <span class="muted">06 MODULES</span>
+      </div>
+
+      <div class="tool-grid">
+        <button class="tool-card" data-open="password"><span class="tool-icon">▣</span><h3>Password Lab</h3><p>Check password strength locally.</p><span class="card-link">Open tool →</span></button>
+        <button class="tool-card" data-open="url"><span class="tool-icon">◎</span><h3>URL Checker</h3><p>Inspect URL structure and warning signs.</p><span class="card-link">Open tool →</span></button>
+        <button class="tool-card" data-open="encoder"><span class="tool-icon">⌘</span><h3>Text Encoder</h3><p>Encode and decode Base64 text.</p><span class="card-link">Open tool →</span></button>
+        <button class="tool-card" data-open="hash"><span class="tool-icon">#</span><h3>Hash Generator</h3><p>Generate SHA-256 hashes.</p><span class="card-link">Open tool →</span></button>
+        <button class="tool-card" data-open="quiz"><span class="tool-icon">✓</span><h3>Security Quiz</h3><p>Test your security knowledge.</p><span class="card-link">Open tool →</span></button>
+        <button class="tool-card" data-open="terminal"><span class="tool-icon">>_</span><h3>Practice Terminal</h3><p>Learn basic commands in a simulation.</p><span class="card-link">Open tool →</span></button>
+      </div>
+
+      <div class="notice"><strong>Learning environment</strong><p>These tools run in your browser. URL Checker performs a basic local inspection; it does not confirm whether a website is safe or malicious.</p></div>
+    </section>
+
+    <section id="password" class="page">
+      <div class="panel">
+        <p class="eyebrow">TOOL 01</p><h2>Password Strength Checker</h2>
+        <p class="muted">Check password characteristics. Your password is not sent to a server.</p>
+        <label for="password-input">Enter a test password</label>
+        <input id="password-input" type="password" placeholder="Type a password">
+        <div class="strength-track"><div id="strength-bar"></div></div>
+        <h3 id="strength-label">Not checked</h3>
+        <ul class="checks">
+          <li id="check-length">At least 12 characters</li>
+          <li id="check-upper">Contains uppercase letters</li>
+          <li id="check-lower">Contains lowercase letters</li>
+          <li id="check-number">Contains numbers</li>
+          <li id="check-symbol">Contains symbols</li>
+        </ul>
+        <p class="muted small">Use a unique password for every account. This checker is a basic guide, not a guarantee of security.</p>
+      </div>
+    </section>
+
+    <section id="url" class="page">
+      <div class="panel">
+        <p class="eyebrow">TOOL 02</p><h2>URL Structure Checker</h2>
+        <p class="muted">Inspect a link's structure without opening it.</p>
+        <label for="url-input">Website URL</label>
+        <input id="url-input" type="text" placeholder="https://example.com">
+        <button class="primary-btn" id="check-url">Inspect URL</button>
+        <div id="url-result" class="result" aria-live="polite">Your inspection will appear here.</div>
+        <p class="muted small">This is not a malware scanner. Never enter passwords or personal details on an unfamiliar website.</p>
+      </div>
+    </section>
+
+    <section id="encoder" class="page">
+      <div class="panel">
+        <p class="eyebrow">TOOL 03</p><h2>Base64 Encoder / Decoder</h2>
+        <label for="encode-input">Text</label>
+        <textarea id="encode-input" rows="5" placeholder="Enter text here..."></textarea>
+        <div class="button-row">
+          <button class="primary-btn" id="encode-btn">Encode</button>
+          <button class="secondary-btn" id="decode-btn">Decode</button>
+        </div>
+        <label for="encode-output">Result</label>
+        <textarea id="encode-output" rows="5" readonly placeholder="Result appears here..."></textarea>
+        <button class="secondary-btn" id="copy-encoded">Copy result</button>
+        <p class="muted small">Base64 is an encoding format, not encryption. Do not use it to protect secrets.</p>
+      </div>
+    </section>
+
+    <section id="hash" class="page">
+      <div class="panel">
+        <p class="eyebrow">TOOL 04</p><h2>SHA-256 Hash Generator</h2>
+        <label for="hash-input">Enter text</label>
+        <textarea id="hash-input" rows="5" placeholder="Type text to generate a hash..."></textarea>
+        <button class="primary-btn" id="hash-btn">Generate SHA-256</button>
+        <label for="hash-output">Hash result</label>
+        <textarea id="hash-output" rows="3" readonly placeholder="Hash appears here..."></textarea>
+        <button class="secondary-btn" id="copy-hash">Copy hash</button>
+        <p class="muted small">Hashing is one-way. It is not a method for encrypting messages.</p>
+      </div>
+    </section>
+
+    <section id="quiz" class="page">
+      <div class="panel">
+        <p class="eyebrow">TOOL 05</p><h2>Security Knowledge Quiz</h2>
+        <div id="quiz-area"></div>
+      </div>
+    </section>
+
+    <section id="terminal" class="page">
+      <div class="panel">
+        <p class="eyebrow">TOOL 06</p><h2>Practice Terminal</h2>
+        <p class="muted">A simulated terminal for learning basic commands. It does not execute system commands.</p>
+        <div class="terminal-window">
+          <div class="terminal-head"><span></span><span></span><span></span><small>CYBER LAB TERMINAL</small></div>
+          <div id="terminal-output" class="terminal-output">Cyber Lab Training Terminal
+Type "help" to see available commands.</div>
+          <form id="terminal-form" class="terminal-form">
+            <label for="terminal-input">student@cyberlab:~$</label>
+            <input id="terminal-input" autocomplete="off" placeholder="Type help">
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>CYBER LAB <span>•</span> Built for learning and safe practice</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
